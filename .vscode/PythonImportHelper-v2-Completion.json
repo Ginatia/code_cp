@@ -1,0 +1,38 @@
+[
+    {
+        "label": "first_true",
+        "kind": 2,
+        "importPath": "python.binary_answer",
+        "description": "python.binary_answer",
+        "peekOfCode": "def first_true(L: int, R: int, f):\n    R += 1\n    while L < R:\n        mid = L+(R-L)//2\n        if f(mid):\n            R = mid\n        else:\n            L = mid+1\n    return L\ndef last_true(L: int, R: int, f):",
+        "detail": "python.binary_answer",
+        "documentation": {}
+    },
+    {
+        "label": "last_true",
+        "kind": 2,
+        "importPath": "python.binary_answer",
+        "description": "python.binary_answer",
+        "peekOfCode": "def last_true(L: int, R: int, f):\n    L -= 1\n    while L < R:\n        mid = L+(R-L+1)//2\n        if f(mid):\n            L = mid\n        else:\n            R = mid-1\n    return L\ndef test():",
+        "detail": "python.binary_answer",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "python.binary_answer",
+        "description": "python.binary_answer",
+        "peekOfCode": "def test():\n    a = list(range(10))\n    def even(i):\n        return a[i] % 2 == 0\n    print(first_true(0, 10, even), last_true(0, 10, even))\ntest()",
+        "detail": "python.binary_answer",
+        "documentation": {}
+    },
+    {
+        "label": "Dsu",
+        "kind": 6,
+        "importPath": "python.Dsu",
+        "description": "python.Dsu",
+        "peekOfCode": "class Dsu:\n    def __init__(self, n: int) -> None:\n        self.f = list(range(n))\n        self.sz = [1]*n\n    def leader(self, x: int) -> int:\n        x_copy = x\n        while x != self.f[x]:\n            x = self.f[x]\n        while x_copy != x:\n            self.f[x_copy], x_copy = x, self.f[x_copy]",
+        "detail": "python.Dsu",
+        "documentation": {}
+    }
+]
