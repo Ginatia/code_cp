@@ -1,1 +1,1 @@
-算法竞赛自用库，c++ and Python
+算法竞赛自用库，C++ and Python
