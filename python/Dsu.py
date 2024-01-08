@@ -21,3 +21,6 @@ class Dsu:
         self.f[v] = u
         self.sz[u] += self.sz[v]
         return True
+
+    def size(self, x):
+        return self.sz[self.leader(x)]
