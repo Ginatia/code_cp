@@ -1,5 +1,14 @@
 [
     {
+        "label": "heapq",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "heapq",
+        "description": "heapq",
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
         "label": "first_true",
         "kind": 2,
         "importPath": "python.binary_answer",
@@ -24,6 +33,15 @@
         "description": "python.binary_answer",
         "peekOfCode": "def test():\n    a = list(range(10))\n    def even(i):\n        return a[i] % 2 == 0\n    print(first_true(0, 10, even), last_true(0, 10, even))\ntest()",
         "detail": "python.binary_answer",
+        "documentation": {}
+    },
+    {
+        "label": "solve",
+        "kind": 2,
+        "importPath": "python.dijkstra",
+        "description": "python.dijkstra",
+        "peekOfCode": "def solve():\n    n, m = map(int, input().split())\n    G = [[] for _ in range(n)]\n    for _ in range(m):\n        a, b, c = map(int, input().split())\n        a -= 1\n        b -= 1\n        G[a].append((b, c))\n        G[b].append((a, c))\n    def dist(s: int):",
+        "detail": "python.dijkstra",
         "documentation": {}
     },
     {
