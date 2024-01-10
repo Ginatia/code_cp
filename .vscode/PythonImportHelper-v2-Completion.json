@@ -36,11 +36,11 @@
         "documentation": {}
     },
     {
-        "label": "solve",
-        "kind": 2,
+        "label": "Dijkstra",
+        "kind": 6,
         "importPath": "python.dijkstra",
         "description": "python.dijkstra",
-        "peekOfCode": "def solve():\n    n, m = map(int, input().split())\n    G = [[] for _ in range(n)]\n    for _ in range(m):\n        a, b, c = map(int, input().split())\n        a -= 1\n        b -= 1\n        G[a].append((b, c))\n        G[b].append((a, c))\n    def dist(s: int):",
+        "peekOfCode": "class Dijkstra:\n    def __init__(self, _n: int) -> None:\n        self.G = [[] for _ in range(_n)]\n        self.bs = [-1]*_n\n    def add_edge(self, u: int, v: int, c):\n        self.G[u].append((v, c))\n    def build(self, s: int, INF):\n        n = len(self.G)\n        ds = [INF]*n\n        ds[s] = 0",
         "detail": "python.dijkstra",
         "documentation": {}
     },
