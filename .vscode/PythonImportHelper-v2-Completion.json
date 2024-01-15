@@ -52,5 +52,41 @@
         "peekOfCode": "class Dsu:\n    def __init__(self, n: int) -> None:\n        self.f = list(range(n))\n        self.sz = [1]*n\n    def leader(self, x: int) -> int:\n        x_copy = x\n        while x != self.f[x]:\n            x = self.f[x]\n        while x_copy != x:\n            self.f[x_copy], x_copy = x, self.f[x_copy]",
         "detail": "python.Dsu",
         "documentation": {}
+    },
+    {
+        "label": "z_func",
+        "kind": 2,
+        "importPath": "python.string",
+        "description": "python.string",
+        "peekOfCode": "def z_func(s: str) -> list:\n    n = len(s)\n    z = [0]*(n)\n    l, r = 0, 0\n    for i in range(1, n):\n        if i < r:\n            z[i] = min(r-i, z[i-l])\n        while i+z[i] < n and s[z[i]] == s[i+z[i]]:\n            z[i] += 1\n        if i+z[i] > r:",
+        "detail": "python.string",
+        "documentation": {}
+    },
+    {
+        "label": "find_position",
+        "kind": 2,
+        "importPath": "python.string",
+        "description": "python.string",
+        "peekOfCode": "def find_position(t: str, p: str) -> list:\n    \"\"\"\n    t:text string,p:pattern string\n    from t find p\n    \"\"\"\n    idx = []\n    Lt, Lp = len(t), len(p)\n    s = p+\"#\"+t\n    z = z_func(s)\n    for i in range(Lt):",
+        "detail": "python.string",
+        "documentation": {}
+    },
+    {
+        "label": "prefix_func",
+        "kind": 2,
+        "importPath": "python.string",
+        "description": "python.string",
+        "peekOfCode": "def prefix_func(s: str) -> list:\n    n = len(s)\n    pi = [0]*n\n    for i in range(1, n):\n        j = pi[i-1]\n        while j > 0 and s[i] != s[j]:\n            j = pi[j-1]\n        if s[i] == s[j]:\n            j += 1\n        pi[i] = j",
+        "detail": "python.string",
+        "documentation": {}
+    },
+    {
+        "label": "match",
+        "kind": 2,
+        "importPath": "python.string",
+        "description": "python.string",
+        "peekOfCode": "def match(t: str, p: str) -> bool:\n    \"\"\"\n    t:text string,p:pattern string\n    from t find p\n    \"\"\"\n    lps = prefix_func(p+'#'+t)\n    Lt, Lp = len(t), len(p)\n    for i in range(Lp+1, Lt+Lp+1):\n        if lps[i] == Lp:\n            return True",
+        "detail": "python.string",
+        "documentation": {}
     }
 ]
