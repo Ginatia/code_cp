@@ -1,4 +1,5 @@
 from collections import deque
+import heapq
 
 
 class TopologicalSort:
@@ -13,12 +14,14 @@ class TopologicalSort:
     def build(self):
         n = len(self.G)
         q = deque()
+        # q=[] heapq
         used = [False]*n
 
         def push(u):
             if used[u]:
                 return
             q.append(u)
+            # heapq.heappush(q, u)
             used[u] = True
 
         for i in range(n):
@@ -28,6 +31,7 @@ class TopologicalSort:
         ps = []
         while q:
             u = q.popleft()
+            # u = heapq.heappop(q)
             ps.append(u)
             for v in self.G[u]:
                 self.indeg[v] -= 1

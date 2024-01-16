@@ -18,6 +18,7 @@ public:
     {
         int n = (int)G.size();
         std::queue<int> q;
+        // use prority to get lexicographical order
         std::vector<bool> used(n, false);
 
         auto push = [&](int u)
