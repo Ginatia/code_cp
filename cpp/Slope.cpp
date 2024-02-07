@@ -42,7 +42,7 @@ private:
     {
         if (L.empty())
         {
-            return INF;
+            return -INF;
         }
         else
         {
