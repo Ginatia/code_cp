@@ -136,7 +136,7 @@ public:
 
     // \/. -> .\/
     // f_{new}(x) = f(x-a)
-    void shift(constT &a)
+    void shift(const T &a)
     {
         shift(a, a);
     }
