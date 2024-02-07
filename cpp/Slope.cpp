@@ -127,7 +127,7 @@ public:
 
     // \/ -> \____/
     // f_{new}(x) = min f(y)(x-b<=y<=x-a)
-    void shift(const T &a, constT &b)
+    void shift(const T &a, const T &b)
     {
         assert(a <= b);
         add_L += a;
