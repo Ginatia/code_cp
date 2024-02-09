@@ -9,6 +9,15 @@
         "documentation": {}
     },
     {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
         "label": "deque",
         "importPath": "collections",
         "description": "collections",
@@ -59,6 +68,24 @@
         "description": "python.Dsu",
         "peekOfCode": "class Dsu:\n    def __init__(self, n: int) -> None:\n        self.f = list(range(n))\n        self.sz = [1]*n\n    def leader(self, x: int) -> int:\n        x_copy = x\n        while x != self.f[x]:\n            x = self.f[x]\n        while x_copy != x:\n            self.f[x_copy], x_copy = x, self.f[x_copy]",
         "detail": "python.Dsu",
+        "documentation": {}
+    },
+    {
+        "label": "convolve",
+        "kind": 2,
+        "importPath": "python.FTT_NTT",
+        "description": "python.FTT_NTT",
+        "peekOfCode": "def convolve(f, g):\n    \"\"\"\n    f:np.ndarray(int64)\n    g:np.ndarray(int64)\n    return h:np.ndarray,f*g\n    \"\"\"\n    fft_len = 1\n    while 2*fft_len < len(f)+len(g)-1:\n        fft_len *= 2\n    fft_len *= 2",
+        "detail": "python.FTT_NTT",
+        "documentation": {}
+    },
+    {
+        "label": "convolve_mod",
+        "kind": 2,
+        "importPath": "python.FTT_NTT",
+        "description": "python.FTT_NTT",
+        "peekOfCode": "def convolve_mod(f, g, p):\n    \"\"\"\n    f=2**15*f1+f2\n    g=2**15*g1+g2\n    fg=2**30*f1g1+2**15(f1g2+f2g1)+f2g2\n    a=f1g1\n    b=f1g2+f2g1\n    c=f2g2\n    fg=a<<30+b<<15+c\n    \"\"\"",
+        "detail": "python.FTT_NTT",
         "documentation": {}
     },
     {
