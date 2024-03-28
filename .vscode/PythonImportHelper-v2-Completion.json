@@ -1,5 +1,13 @@
 [
     {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "heapq",
         "kind": 6,
         "isExtraImport": true,
@@ -23,6 +31,24 @@
         "description": "collections",
         "isExtraImport": true,
         "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Bellman_Ford",
+        "kind": 2,
+        "importPath": "python.Bellman_Ford",
+        "description": "python.Bellman_Ford",
+        "peekOfCode": "def Bellman_Ford(es: Edges, V: int, S: int):\n    INF = 10**9\n    dis = [INF]*V\n    dis[S] = 0\n    for _ in range(V-1):\n        for u, v, w in es:\n            if dis[u] == INF:\n                continue\n            dis[v] = min(dis[v], dis[u]+w)\n    for u, v, w in es:",
+        "detail": "python.Bellman_Ford",
+        "documentation": {}
+    },
+    {
+        "label": "Edges",
+        "kind": 5,
+        "importPath": "python.Bellman_Ford",
+        "description": "python.Bellman_Ford",
+        "peekOfCode": "Edges = List[Tuple[int, int, int]]\ndef Bellman_Ford(es: Edges, V: int, S: int):\n    INF = 10**9\n    dis = [INF]*V\n    dis[S] = 0\n    for _ in range(V-1):\n        for u, v, w in es:\n            if dis[u] == INF:\n                continue\n            dis[v] = min(dis[v], dis[u]+w)",
+        "detail": "python.Bellman_Ford",
         "documentation": {}
     },
     {
