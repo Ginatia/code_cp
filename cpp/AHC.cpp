@@ -1,4 +1,5 @@
 #include <chrono>
+#include <cmath>
 #include <random>
 class TimeKeeperDouble{
 public:
@@ -34,5 +35,8 @@ public:
     }
     double next_double(){
         return d(mt);
+    }
+    double next_log(){
+        return std::log(d(mt));
     }
 };

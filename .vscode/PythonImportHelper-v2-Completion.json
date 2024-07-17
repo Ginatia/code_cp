@@ -8,6 +8,15 @@
         "documentation": {}
     },
     {
+        "label": "heapq",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "heapq",
+        "description": "heapq",
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
         "label": "numpy",
         "kind": 6,
         "isExtraImport": true,
@@ -22,15 +31,6 @@
         "description": "collections",
         "isExtraImport": true,
         "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "heapq",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "heapq",
-        "description": "heapq",
-        "detail": "heapq",
         "documentation": {}
     },
     {
@@ -49,42 +49,6 @@
         "description": "python.Bellman_Ford",
         "peekOfCode": "Edges = List[Tuple[int, int, int]]\ndef Bellman_Ford(es: Edges, V: int, S: int):\n    INF = 10**9\n    dis = [INF]*V\n    dis[S] = 0\n    for _ in range(V-1):\n        for u, v, w in es:\n            if dis[u] == INF:\n                continue\n            dis[v] = min(dis[v], dis[u]+w)",
         "detail": "python.Bellman_Ford",
-        "documentation": {}
-    },
-    {
-        "label": "Dsu",
-        "kind": 6,
-        "importPath": "python.Dsu",
-        "description": "python.Dsu",
-        "peekOfCode": "class Dsu:\n    def __init__(self, n: int) -> None:\n        self.f = list(range(n))\n        self.sz = [1]*n\n    def leader(self, x: int) -> int:\n        x_copy = x\n        while x != self.f[x]:\n            x = self.f[x]\n        while x_copy != x:\n            self.f[x_copy], x_copy = x, self.f[x_copy]",
-        "detail": "python.Dsu",
-        "documentation": {}
-    },
-    {
-        "label": "convolve",
-        "kind": 2,
-        "importPath": "python.FTT_NTT",
-        "description": "python.FTT_NTT",
-        "peekOfCode": "def convolve(f, g):\n    \"\"\"\n    f:np.ndarray(int64)\n    g:np.ndarray(int64)\n    return h:np.ndarray,f*g\n    \"\"\"\n    fft_len = 1\n    while 2*fft_len < len(f)+len(g)-1:\n        fft_len *= 2\n    fft_len *= 2",
-        "detail": "python.FTT_NTT",
-        "documentation": {}
-    },
-    {
-        "label": "convolve_mod",
-        "kind": 2,
-        "importPath": "python.FTT_NTT",
-        "description": "python.FTT_NTT",
-        "peekOfCode": "def convolve_mod(f, g, p):\n    \"\"\"\n    f=2**15*f1+f2\n    g=2**15*g1+g2\n    fg=2**30*f1g1+2**15(f1g2+f2g1)+f2g2\n    a=f1g1\n    b=f1g2+f2g1\n    c=f2g2\n    fg=a<<30+b<<15+c\n    \"\"\"",
-        "detail": "python.FTT_NTT",
-        "documentation": {}
-    },
-    {
-        "label": "TopologicalSort",
-        "kind": 6,
-        "importPath": "python.TopoSort",
-        "description": "python.TopoSort",
-        "peekOfCode": "class TopologicalSort:\n    def __init__(self, n: int) -> None:\n        self.G = [[] for _ in range(n)]\n        self.indeg = [0]*n\n    def add_edge(self, s: int, t: int):\n        self.G[s].append(t)\n        self.indeg[t] += 1\n    def build(self):\n        n = len(self.G)\n        q = deque()",
-        "detail": "python.TopoSort",
         "documentation": {}
     },
     {
@@ -124,6 +88,33 @@
         "documentation": {}
     },
     {
+        "label": "Dsu",
+        "kind": 6,
+        "importPath": "python.Dsu",
+        "description": "python.Dsu",
+        "peekOfCode": "class Dsu:\n    def __init__(self, n: int) -> None:\n        self.f = list(range(n))\n        self.sz = [1]*n\n    def leader(self, x: int) -> int:\n        x_copy = x\n        while x != self.f[x]:\n            x = self.f[x]\n        while x_copy != x:\n            self.f[x_copy], x_copy = x, self.f[x_copy]",
+        "detail": "python.Dsu",
+        "documentation": {}
+    },
+    {
+        "label": "convolve",
+        "kind": 2,
+        "importPath": "python.FTT_NTT",
+        "description": "python.FTT_NTT",
+        "peekOfCode": "def convolve(f, g):\n    \"\"\"\n    f:np.ndarray(int64)\n    g:np.ndarray(int64)\n    return h:np.ndarray,f*g\n    \"\"\"\n    fft_len = 1\n    while 2*fft_len < len(f)+len(g)-1:\n        fft_len *= 2\n    fft_len *= 2",
+        "detail": "python.FTT_NTT",
+        "documentation": {}
+    },
+    {
+        "label": "convolve_mod",
+        "kind": 2,
+        "importPath": "python.FTT_NTT",
+        "description": "python.FTT_NTT",
+        "peekOfCode": "def convolve_mod(f, g, p):\n    \"\"\"\n    f=2**15*f1+f2\n    g=2**15*g1+g2\n    fg=2**30*f1g1+2**15(f1g2+f2g1)+f2g2\n    a=f1g1\n    b=f1g2+f2g1\n    c=f2g2\n    fg=a<<30+b<<15+c\n    \"\"\"",
+        "detail": "python.FTT_NTT",
+        "documentation": {}
+    },
+    {
         "label": "z_func",
         "kind": 2,
         "importPath": "python.string",
@@ -157,6 +148,15 @@
         "description": "python.string",
         "peekOfCode": "def match(t: str, p: str) -> bool:\n    \"\"\"\n    t:text string,p:pattern string\n    from t find p\n    \"\"\"\n    lps = prefix_func(p+'#'+t)\n    Lt, Lp = len(t), len(p)\n    for i in range(Lp+1, Lt+Lp+1):\n        if lps[i] == Lp:\n            return True",
         "detail": "python.string",
+        "documentation": {}
+    },
+    {
+        "label": "TopologicalSort",
+        "kind": 6,
+        "importPath": "python.TopoSort",
+        "description": "python.TopoSort",
+        "peekOfCode": "class TopologicalSort:\n    def __init__(self, n: int) -> None:\n        self.G = [[] for _ in range(n)]\n        self.indeg = [0]*n\n    def add_edge(self, s: int, t: int):\n        self.G[s].append(t)\n        self.indeg[t] += 1\n    def build(self):\n        n = len(self.G)\n        q = deque()",
+        "detail": "python.TopoSort",
         "documentation": {}
     }
 ]
