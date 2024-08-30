@@ -4,9 +4,9 @@
 class TimeKeeperDouble{
 public:
     std::chrono::high_resolution_clock::time_point start_time;
-    double TL,now_time{0};
+    double TTL,now_time{0};
 
-    TimeKeeperDouble(const double _TL):start_time(std::chrono::high_resolution_clock::now()),TL(_TL){}
+    TimeKeeperDouble(const double _TTL):start_time(std::chrono::high_resolution_clock::now()),TTL(_TTL){}
     void setNowTime(){
         auto diff=std::chrono::high_resolution_clock::now()-start_time;
         this->now_time=std::chrono::duration_cast<std::chrono::microseconds>(diff).count()*1e-3;
@@ -15,7 +15,7 @@ public:
         return this->now_time;
     }
     bool isTimeOver()const{
-        return now_time>=TL;
+        return now_time>=TTL;
     }
 };
 
