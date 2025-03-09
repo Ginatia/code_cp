@@ -1,6 +1,6 @@
 #include <functional>
 template <typename T>
-T first_true(T l, T r, std::function<bool(T)> &&f)
+T first_true(T l, T r, std::function<bool(T)> &&f) //[l,r]
 {
     r++;
     while (l < r)
@@ -19,7 +19,7 @@ T first_true(T l, T r, std::function<bool(T)> &&f)
 }
 
 template <typename T>
-T last_true(T l, T r, std::function<bool(T)> &&f)
+T last_true(T l, T r, std::function<bool(T)> &&f) //[l,r]
 {
     l--;
     while (l < r)
